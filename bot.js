@@ -22,5 +22,6 @@ client.on("message", async message => {
     })
     message.channel.send("All channels have been locked.");
   }
+});
 
 client.login(process.env.BOT_TOKEN);
