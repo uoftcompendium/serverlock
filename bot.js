@@ -14,7 +14,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
  
 
-  if(command === "lockdown") {
+  if(command === "lock") {
     if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
     message.channel.overwritePermissions(message.guild.id, {
