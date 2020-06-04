@@ -19,7 +19,7 @@ client.on("message", async message => {
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
     message.guild.channels.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
-    })
+    }))
     message.channel.send("All channels have been locked.");
   }
 });
