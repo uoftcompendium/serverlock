@@ -15,7 +15,7 @@ client.on("message", async message => {
  
 
   if(command === "lock") {
-    if(!message.member.roles.cache.some(r=>["tank"].includes(r.name)) )
+    if(!message.member.roles.cache.some(r=>["Moderator"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
@@ -24,7 +24,7 @@ client.on("message", async message => {
   }
 
   if(command === "unlock") {
-    if(!message.member.roles.cache.some(r=>["tank"].includes(r.name)) )
+    if(!message.member.roles.cache.some(r=>["Admin"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
