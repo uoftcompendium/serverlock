@@ -103,7 +103,7 @@ client.on("message", async message => {
   if(command === "lockdown") {
     if(!message.member.roles.some(r=>["Owner"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
-    message.channel.overwritePermissions(message.guild.id, {
+    message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
     })
     message.channel.send("All channels have been locked.");
