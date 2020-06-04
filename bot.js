@@ -22,6 +22,15 @@ client.on("message", async message => {
     }))
     message.channel.send("All channels have been locked.");
   }
+
+  if(command === "unlock") {
+    if(!message.member.roles.cache.some(r=>["Owner"].includes(r.name)) )
+      return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
+    message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
+      SEND_MESSAGES: true
+    }))
+    message.channel.send("All channels have been locked.");
+  }
 });
 
 client.login(process.env.BOT_TOKEN);
