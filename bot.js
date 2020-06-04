@@ -20,7 +20,7 @@ client.on("message", async message => {
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
     }))
-    message.channel.send("All channels have been locked.");
+    message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718217578945839204>");
   }
 
   if(command === "unlock") {
@@ -29,7 +29,7 @@ client.on("message", async message => {
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
     }))
-    message.channel.send("All channels have been locked.");
+    message.channel.send("`Serverlock` disabled. Admin override: `null` <:success:718217578945839204>");
   }
 });
 
