@@ -17,7 +17,7 @@ client.on("message", async message => {
   if(command === "lock") {
     if(!message.member.roles.cache.some(r=>["Owner"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
-    message.guild.channels.forEach(c => c.updateOverwrite(message.guild.id, {
+    message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
     }))
     message.channel.send("All channels have been locked.");
