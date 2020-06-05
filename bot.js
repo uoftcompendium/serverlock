@@ -24,7 +24,7 @@ client.on("message", async message => {
     message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718289545501605960>");
     message.channel.send("Channel overrides automatically enabled: `714287938376040540` INT_4");
     message.channel.send("Channel overrides automatically revoked: `701692208671096934` INT_7");
-    message.channel.send("Moderator override disabled. Confirm PIN.");
+    message.channel.send("This server is under **full lockdown**. Staff are currently investigating the raid.");
   }
     
   if(command === "bypass") {
@@ -33,7 +33,7 @@ client.on("message", async message => {
       return message.reply("you have no power here");    const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     // And we get the bot to say the thing: 
-    message.channel.send("This server is under **lockdown**. Staff are currently investigating the raid.");
+    message.channel.send("This server is under **full lockdown**. Staff are currently investigating the raid.");
   }
 
   if(command === "unlock") {
