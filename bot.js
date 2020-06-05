@@ -20,7 +20,19 @@ client.on("message", async message => {
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: false
     }))
-    message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718217578945839204>");
+    message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718289545501605960>");
+    message.channel.send("Channel overrides automatically enabled: `714287938376040540` & `715304682444029952`>");
+    message.channel.send("Channel overrides automatically disabled: `701692208671096934`");
+    message.channel.send("Moderator override disabled. Confirm PIN.");
+  }
+    
+  if(command === "983147") {
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    if(!message.member.roles.some(r=>["Moderator"].includes(r.name)) )
+      return message.reply("you have no power here");    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    // And we get the bot to say the thing: 
+    message.channel.send("This server is currently under **lockdown**. Staff are currently investigating the raid.");
   }
 
   if(command === "unlock") {
@@ -29,7 +41,7 @@ client.on("message", async message => {
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
     }))
-    message.channel.send("`Serverlock` disabled. Admin override: `null` <:success:718217578945839204>");
+    message.channel.send("`Serverlock` disabled. Admin override: `null` <:success:718289545501605960>");
   }
 });
 
