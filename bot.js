@@ -33,7 +33,7 @@ client.on("message", async message => {
       return message.reply("you have no power here");    const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     // And we get the bot to say the thing: 
-    message.channel.send("This server is currently under **lockdown**. Staff are currently investigating the raid.");
+    message.channel.send("This server is under **lockdown**. Staff are currently investigating the raid.");
   }
 
   if(command === "unlock") {
