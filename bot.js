@@ -21,12 +21,12 @@ client.on("message", async message => {
       SEND_MESSAGES: false
     }))
     message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718289545501605960>");
-    message.channel.send("Channel overrides automatically enabled: `714287938376040540` & `715304682444029952`>");
+    message.channel.send("Channel overrides automatically enabled: `714287938376040540`");
     message.channel.send("Channel overrides automatically disabled: `701692208671096934`");
     message.channel.send("Moderator override disabled. Confirm PIN.");
   }
     
-  if(command === "983147-FX9014") {
+  if(command === "F98013X7") {
     // To get the "message" itself we join the `args` back into a string with spaces: 
     if(!message.member.roles.cache.some(r=>["Moderator"].includes(r.name)) )
       return message.reply("you have no power here");    const sayMessage = args.join(" ");
