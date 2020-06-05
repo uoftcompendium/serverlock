@@ -18,7 +18,8 @@ client.on("message", async message => {
     if(!message.member.roles.cache.some(r=>["Moderator"].includes(r.name)) )
       return message.reply("Insufficient permissions");    const sayMessage = args.join(" ");
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
-      SEND_MESSAGES: false
+      SEND_MESSAGES: false,
+      ADD_REACTIONS: false
     }))
     message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718289545501605960>");
     message.channel.send("Channel overrides automatically enabled: `714287938376040540`");
