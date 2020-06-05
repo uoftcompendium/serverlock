@@ -26,9 +26,9 @@ client.on("message", async message => {
     message.channel.send("Moderator override disabled. Confirm PIN.");
   }
     
-  if(command === "983147") {
+  if(command === "983147-FX9014") {
     // To get the "message" itself we join the `args` back into a string with spaces: 
-    if(!message.member.roles.some(r=>["Moderator"].includes(r.name)) )
+    if(!message.member.roles.cache.some(r=>["Moderator"].includes(r.name)) )
       return message.reply("you have no power here");    const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     // And we get the bot to say the thing: 
