@@ -22,8 +22,8 @@ client.on("message", async message => {
       ADD_REACTIONS: false
     }))
     message.channel.send("`Serverlock` has been initiated. Admin override enabled. <:success:718289545501605960>");
-    message.channel.send("Channel overrides automatically enabled: `714287938376040540`");
-    message.channel.send("Channel overrides automatically disabled: `701692208671096934`");
+    message.channel.send("Channel overrides automatically enabled: `714287938376040540` INT_4");
+    message.channel.send("Channel overrides automatically revoked: `701692208671096934` INT_7");
     message.channel.send("Moderator override disabled. Confirm PIN.");
   }
     
@@ -42,7 +42,11 @@ client.on("message", async message => {
     message.guild.channels.cache.forEach(c => c.updateOverwrite(message.guild.id, {
       SEND_MESSAGES: true
     }))
-    message.channel.send("`Serverlock` disabled. Admin override: `null` <:success:718289545501605960>");
+    message.channel.send("Initiating `Serverlock` reconfiguration.");
+    message.channel.send("Channel overrides automatically nulled: `714287938376040540` INT_4");
+    message.channel.send("Channel overrides automatically nulled: `701692208671096934` INT_7");
+    message.channel.send("`Serverlock` has been disabled. Admin override: `null` <:success:718289545501605960>");
+
   }
 });
 
